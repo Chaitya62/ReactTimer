@@ -26,6 +26,7 @@ class Countdown extends Component {
     }
   }
   handleStatusChange(newStatus) {
+
     this.setState({countdownStatus: newStatus});
   }
   componentWillUnmount() {
@@ -53,7 +54,7 @@ class Countdown extends Component {
         return <CountdownForm onSetCountdown={self.handleSetCountdown.bind(self)}/>
 
       } else {
-        return <Controls onStatusChange={self.handleStatusChange.bind(self)} countdownStatus={countdownStatus}/>
+        return <Controls onStatusChange={self.handleStatusChange.bind(self)} status={countdownStatus}/>
       }
     }
     return (
