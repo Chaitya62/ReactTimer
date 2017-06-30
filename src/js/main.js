@@ -5,7 +5,7 @@ import App from 'App';
 
 // load foundation-sites
 
-require('foundation-sites/dist/css/foundation.min.css');
+//require('foundation-sites/dist/css/foundation.min.css');
 require('applicationStyles/app.scss');
 
 $(document).foundation();

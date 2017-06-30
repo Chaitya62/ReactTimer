@@ -14,8 +14,9 @@ module.exports= {
   plugins:[
     new webpack.ProvidePlugin({
       '$':'jquery',
-      'jQuery': 'jquery'
-    })
+      'jQuery': 'jquery',
+
+    }),
   ],
   output: {
     path: __dirname,
@@ -30,6 +31,7 @@ module.exports= {
     extensions: ['.js','.jsx']
   },
   module: {
+
     loaders:[
       {
         test: /.jsx?/,
@@ -43,10 +45,23 @@ module.exports= {
 				test: /\.css$/,
 				loader: ['style-loader', 'css-loader']
 			},
+      
       {
-        test: /\.scss$/,
-        loader: ['style-loader', 'css-loader','sass-loader']
-      }
-    ]
-  }
+             test: /\.scss$/,
+             use: [{
+                 loader: "style-loader"
+             }, {
+                 loader: "css-loader"
+             }, {
+                 loader: "sass-loader",
+                 options: {
+                     includePaths: [path.resolve(__dirname,'./node_modules/foundation-sites/scss')]
+                 }
+             }]
+         }
+    ],
+
+  },
+
+
 };
