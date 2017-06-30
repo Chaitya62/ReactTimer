@@ -26,7 +26,6 @@ class Countdown extends Component {
     }
   }
   handleStatusChange(newStatus) {
-    console.log(newStatus);
     this.setState({countdownStatus: newStatus});
   }
   componentWillUnmount() {
