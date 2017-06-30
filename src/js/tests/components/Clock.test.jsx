@@ -11,7 +11,7 @@ describe('Clock', () => {
     expect(Clock).toExist();
   });
 
-  describe('Render', () => {
+  describe('render', () => {
     it('should render clock to output', () => {
 
       var clock = ReactTestUtils.renderIntoDocument(<Clock totalSeconds={62}/>);
